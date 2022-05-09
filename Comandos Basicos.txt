@@ -1,0 +1,101 @@
+# Conceito de Banco de dados
+
+* MOdelagem Conceitual
+    A principal finalidade é documentar os requisitos e as regras de negócios através do
+"Diagrama de Entidade e Relacionamento(DER)".
+
+* Modelagem Lógica 
+    A principal finalidade é descrever como os dados serão armazenados no banco de dados e 
+também como serão seus Relacionamentos.
+
+* Modelagem física
+    A principal finalidade é a produção das instruções DDL(Data Definition Language) do SQL 
+para implementação do projeto de banco de dados.
+
+
+
+# Tipos de dados Básicos (char, varchar, text, int, float, date, time, datetime)
+
+* Valores de texto (string)
+    char - texto de comprimento fixo (de 1 à 255 caracteres)
+    varchar - te de comprimento variável (de 1 à 255 caracteres)
+    text -  texto longo
+
+* Valores numéricos 
+    int - valor numérico inteiro
+    float - valor numérico fracionado
+
+* Valores de data e hora
+    date - data
+    time - hora
+    datetime - data e hora
+
+
+
+# Criando e Removendo Bancos de Dados
+
+* SQL 
+    Conjunto DDL(da Definition Language)
+    - O comando "CREATE DATABASE" é responsável pela criação de um novo banco de dados vazio, conforme podemos ver abaixo:
+    Ex: CREATE DATABASE banco_teste;        // Ao ser executado, estaremos criando o banco de dados chamado “banco_teste”
+
+    - O comando "DROP DATABASE" é utilizado para remoção de um banco de dados por completo. 
+    Ex: DROP DATABASE banco_teste;          // Ao ser executado, estaremos excluindo o banco de dados chamado “banco_teste”
+
+    - O comando "CREATE TABLE" irá criar uma nova tabela. Veremos abaixo a criação de uma tabela. Ao criar, especificaremos as suas colunas e quais tipos de dados elas irão receber.
+    Ex: para criar uma tabela deve-se seguir os seguintes comandos:
+
+    USE DATABASE banco_teste;               // esse comando irá selecionar o banco onde a tabela será criada, em seguida digite:
+    
+    CREATE TABLE ALUNO (                    // nome da tabela
+        idade int,                          // coluna com tipo básico "inteiro"
+        sexo varchar(1),                    // coluna com tipo básico "varchar" com 1 caractere
+        nome varchar(30),                   // coluna com tipo básico "varchar" com 30 caractere
+        endereco text,                      // coluna com tipo básico "text" inserir texto longo    
+        telefone varchar(20),               // coluna com tipo básico "varchar" com 20 caracteres
+        valor_pago_curso float(10,2),       // coluna com tipo básico "float" com 10 caracteres, 8 números antes da ',' e 2 depois (decimais)
+        data_inscricao_curso date,          // coluna com tipo básico "date"
+        ativo_sn int                        // coluna com tipo básico "inteiro" 0 para N e 1 para S
+    );                                      // finalizando com ';" 
+
+    SHOW TABLES;                            // para confirmar se a tabela foi criada no banco certo
+
+    - O comando "DROP TABLE" é utilizado para remoção de uma tabela. Desta forma para remover uma tabela, basta inserirmos o seguinte comando:
+    Ex: DROP TABLE ALUNO;                   // esse comando irá excluir a tabela do banco de dados selecionado              
+
+    SHOW TABLES;                            // para confirmar se a tabela criada foi excluída no banco certo
+
+
+
+
+
+         ########################  COMANDOS BÁSICOS PARA CRIAR UM BANCO DE DADOS E UMA TABELA NESTE MESMO BANCO  ########################
+
+create database universidade_u;                     // Cria um banco de dados 
+
+show databases;                                     // Mostra o banco criado
+
+use universidade_u;                                 // Seleciona o banco criado
+
+CREATE TABLE ALUNO (                                // Cria uma tabela no banco selecionado
+    idade int,
+    sexo varchar(1),
+    nome varchar(30),
+    endereco text,
+    telefone varchar(20),
+    valor_pago_curso float(10,2),
+    data_inscricao_curso date,
+    ativo_sn int
+);
+
+show tables;                                        // Mostra a tabela criada
+
+
+
+
+
+
+
+
+
+
